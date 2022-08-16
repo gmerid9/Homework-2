@@ -119,7 +119,63 @@ console.log(whereIsWaldo[2][1][1])  //Acess and Console.log 'Waldo'
 const message = 'Love me ,pet me! HSSSSSSS! '
 
 for ( i=0;  i <=20 ; i++) {
-    return message
+    console.log(message)
 }
-console.log(i)
+//2
+// declare a function called kitten that takes no parameter
+const kitten = () => {
+    // declare an array phrase that will hold the phrases
+    const phrasesArr = [
+      "human... whu you taking pictures of me?",
+      "the catnip made me do it",
+      "why does the red dot always get away...",
+    ];
+    // use for loop to log the the phrases 20 times
+    for (let i = 1; i < 21; i++) {
+      // use if statement to log the correct phrase
+      // if i is even, then log one of the phrases from the phrasesArr array
+      // if i is odd, log 'love me , pet me....'
+      if (i % 2 === 0) {
+        // declare a variable that will have the random phrase from the phrasesArr
+        const randomPhrase = phrasesArr[Math.floor(Math.random() * 3)];
+        console.log(randomPhrase);
+      } else {
+        console.log("Love me, pet me!HSSSSSS!");
+      }
+    }
+  };
+  //test
+
+console.log(kitten());
+
+  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//3 // challenge Median
+
+// declare a function called median that will take one parameter
+const median = (num) => {
+    // sort the elements in the array in an ascending order using array sort method
+    num.sort((a, b) => {
+      return a - b;
+    });
+    // use if statement to find median
+    // if the length is odd, then return the element at postion calculated using (num.length +1)/2, the middle element
+    // if the length is even, then return the the average of the two middle elements
+    if (num.length % 2 !== 0) {
+      return num[(num.length + 1) / 2 - 1];
+    } else {
+      // declare a variable for getting the two middle numbers, firstNum and secondNum
+      const firstNum = num[Math.floor(num.length / 2) - 1];
+      const secondNum = num[Math.floor(num.length / 2)];
+      //return the average of the two numbers
+      return (firstNum + secondNum) / 2;
+    }
+  };
+  
+  // Tests
+  const num = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,];
+  
+  console.log(median(num));
